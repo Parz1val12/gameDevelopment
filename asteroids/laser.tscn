@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bow8uytwr5rmd"]
+
+[ext_resource type="Script" uid="uid://dqsmtldmkwnci" path="res://laser.gd" id="1_fn5yt"]
+[ext_resource type="Texture2D" uid="uid://de3tm6jamsipo" path="res://icon.svg" id="2_6vqwg"]
+
+[node name="Laser" type="Area2D" unique_id=942309353]
+script = ExtResource("1_fn5yt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=621771189]
+position = Vector2(-6.4186954, -1.0134788)
+rotation = -1.5707964
+scale = Vector2(0.02359658, 0.21154937)
+texture = ExtResource("2_6vqwg")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D" unique_id=243145157]
+position = Vector2(3.8146973e-06, -3.8146973e-06)
+scale = Vector2(5.8181815, 6.3999996)
