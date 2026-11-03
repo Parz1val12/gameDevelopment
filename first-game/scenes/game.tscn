@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://fh50xycuo2iv" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://qxlxmavmll7v" path="res://assets/world_tileset.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://dqa01xdajdmpt" path="res://scenes/platform.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://dtoyrrbs760ab" path="res://scenes/coin.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://btvetxn3a0nfn" path="res://scenes/killzone.tscn" id="5_iywne"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -208,6 +210,22 @@ _data = {
 &"move": SubResource("Animation_lbhrr")
 }
 
+[sub_resource type="GDScript" id="GDScript_p57ef"]
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j3t2j"]
+
 [node name="Game" type="Node2D" unique_id=1292463472]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=677408141]
@@ -221,6 +239,8 @@ position = Vector2(1, 16)
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=968397607]
 position = Vector2(0, -8)
 zoom = Vector2(4, 4)
+limit_bottom = 100
+limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="Platform" parent="." unique_id=1499848036 instance=ExtResource("3_lnu2h")]
@@ -230,3 +250,50 @@ position = Vector2(336, 21)
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_iywne")
 autoplay = &"move"
+
+[node name="Platform2" parent="." unique_id=1287264162 instance=ExtResource("3_lnu2h")]
+position = Vector2(0, -17)
+
+[node name="Coin" parent="." unique_id=148941519 instance=ExtResource("4_lbhrr")]
+position = Vector2(40, 19)
+
+[node name="Coin4" parent="." unique_id=2019000035 instance=ExtResource("4_lbhrr")]
+position = Vector2(65, -95)
+
+[node name="Coin5" parent="." unique_id=337472004 instance=ExtResource("4_lbhrr")]
+position = Vector2(175, -85)
+
+[node name="Coin6" parent="." unique_id=52154057 instance=ExtResource("4_lbhrr")]
+position = Vector2(226, -45)
+
+[node name="Coin7" parent="." unique_id=377187985 instance=ExtResource("4_lbhrr")]
+position = Vector2(242, -45)
+
+[node name="Coin8" parent="." unique_id=544596115 instance=ExtResource("4_lbhrr")]
+position = Vector2(303, -11)
+
+[node name="Coin9" parent="." unique_id=1773385108 instance=ExtResource("4_lbhrr")]
+position = Vector2(456, 3)
+
+[node name="Coin10" parent="." unique_id=650845234 instance=ExtResource("4_lbhrr")]
+position = Vector2(473, 3)
+
+[node name="Coin11" parent="." unique_id=500803302 instance=ExtResource("4_lbhrr")]
+position = Vector2(473, -16)
+
+[node name="Coin12" parent="." unique_id=1609807403 instance=ExtResource("4_lbhrr")]
+position = Vector2(456, -16)
+
+[node name="Coin2" parent="." unique_id=2125500065 instance=ExtResource("4_lbhrr")]
+position = Vector2(128, 20)
+
+[node name="Coin3" parent="." unique_id=1475389550 instance=ExtResource("4_lbhrr")]
+position = Vector2(192, 19)
+
+[node name="Killzone" parent="." unique_id=2139560645 instance=ExtResource("5_iywne")]
+position = Vector2(119, 123)
+collision_mask = 1
+script = SubResource("GDScript_p57ef")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1688452769]
+shape = SubResource("WorldBoundaryShape2D_j3t2j")
