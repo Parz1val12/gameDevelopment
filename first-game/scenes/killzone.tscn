@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dt7a05678o5nm" path="res://scripts/killzone.gd" id="1_xlapc"]
 
-[node name="Killzone" type="Area2D" unique_id=2139560645]
+[node name="Killzone" type="Area2D" unique_id=1471644590]
 collision_mask = 2
 script = ExtResource("1_xlapc")
 
-[node name="Timer" type="Timer" parent="." unique_id=1020528389]
+[node name="Timer" type="Timer" parent="." unique_id=654953711]
 wait_time = 0.6
 one_shot = true
 
