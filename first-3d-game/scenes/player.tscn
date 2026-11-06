@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://n4738udqyykt"]
+
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_3vyb7"]
+
+[node name="Player" type="Node3D" unique_id=2105597835]
+
+[node name="ProtoController" parent="." unique_id=1917772110 instance=ExtResource("1_3vyb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, -0.1)
+can_sprint = true
